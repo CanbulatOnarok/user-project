@@ -1,8 +1,23 @@
-import React from 'react'
+
 import '../style/UsersList.css';
-const UsersList = () => {
+const UsersList = ({ users }) => {
   return (
-    <div className='user-list-container'>UsersList</div>
+
+
+    <div className='user-list-container'>
+      {users.map(
+        (user) =>
+        <div className='user-card'>
+          <div key={user.id}>
+            <img src="https://l24.im/zt3c" alt='Profil-Pictures'/>
+            <h3>{user.ad}-{user.soyad}</h3>
+            <p>{user.yas}</p>
+            <p>{user.cinsiyet}</p>
+            <p>{user.email}</p>
+          </div>
+          </div>
+      )}
+    </div>
   )
 }
 
